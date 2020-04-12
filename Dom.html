@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table_an{
+            display: none;
+        } 
+    </style>
+
+    <script>
+        function show_table(){
+            //Gọi tới các thẻ
+            var nangcaoHTML = document.getElementById('nangcao');
+            var table = document.getElementById('table_an');
+
+            var text = nangcaoHTML.innerHTML;
+            if(text == 'Tìm kiếm nâng cao'){
+                table.style.display = 'table-row';
+                nangcaoHTML.innerHTML = 'Bỏ tìm kiếm nâng cao';
+            }
+            else{
+                table.style.display = 'none';
+                nangcaoHTML.innerHTML = 'Tìm kiếm nâng cao';
+            }
+
+            return false;
+        }
+
+        
+    </script>
+</head>
+<body>
+  <h1>Tìm kiếm dữ liệu</h1>
+  
+  <table border="1" cellspacing='0' cellpadding='5'>
+      <tr>
+          <td>
+              Nhập tiêu đề
+          </td>
+
+          <td>
+              <input type="text" id="text"> <br/ >
+              <a href="#" id="nangcao" onclick="show_table()">Tìm kiếm nâng cao</a>
+          </td>
+      </tr>
+
+      <tr id="table_an">
+            <td>Chọn chuyên mục</td>
+            
+            <td>
+                <select name="" id="luachon">
+                    <option value="">Java</option>
+                    <option value="">JavaScript</option>
+                </select>
+            </td>
+      </tr>
+          
+      <tr>
+          <td>
+
+          </td>
+
+          <td>
+            <input type="button" id="button" value="Tìm kiếm">
+          </td>
+      </tr>
+  </table>
+</body>
+</html>
